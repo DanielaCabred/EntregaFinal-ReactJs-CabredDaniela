@@ -2,7 +2,6 @@ import './App.css';
 import Header from './Components/Header';
 import Carousel from './Components/Carousel';
 import ItemListContainer from './Components/ItemListContainer';
-import ItemList from './Components/ItemList';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import Footer from './Components/Footer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'

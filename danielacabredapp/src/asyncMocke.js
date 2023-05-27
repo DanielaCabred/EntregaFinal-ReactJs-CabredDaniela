@@ -73,6 +73,7 @@ const productos = [
     }
     ];
 
+
 export const agregarProductos = ()=>{
     return new Promise((resolve) => {
         setTimeout(()=>{
@@ -80,10 +81,15 @@ export const agregarProductos = ()=>{
         },2000)
     })
 }
+
+
 export const agregarProductoId=(id) =>{
     return new Promise((resolve) => {
-        setTimeout(()=>{
-            resolve (productos.find (item=>item.id===id))
-        },2000)
-    })
-}
+        setTimeout(() => {
+            resolve(productos.find(item => item.id === parseInt(id))); //Filtrar mi array de productos y devulevo 1 solo objeto
+        }, 1000);
+    });
+    } 
+
+
+

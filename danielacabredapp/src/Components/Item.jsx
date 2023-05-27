@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import {agregarProductoId} from "../asyncMocke.js"
 
 const Item = ({id,nombre,imagen,precio,stock}) => {
     return (
