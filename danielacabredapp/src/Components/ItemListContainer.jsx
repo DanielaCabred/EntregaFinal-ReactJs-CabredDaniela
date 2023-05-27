@@ -3,7 +3,7 @@ import {agregarProductos} from "../asyncMocke.js"
 import ItemList from "./ItemList"
 
 
-const ItemListContainer = ({greeting}) =>{
+const ItemListContainer = () =>{
     const [productos, setProductos] = useState ([])
 
     useEffect (()=>{
@@ -11,13 +11,13 @@ const ItemListContainer = ({greeting}) =>{
         .then(response =>{
             setProductos(response)
         })
-        .catch (error =>{ console.error(error)
+        .catch (error =>{console.error(error)
         })
     },[])
 console.log(productos);
 return (
     <div>
-        <h1>{greeting}</h1>
+        <h1 className="text-center my-5" style= {{fontWeight:"bolder", fontSize:"35px"}}>Productos destacados</h1>
         <ItemList productos = {productos}/>
     </div>
 )

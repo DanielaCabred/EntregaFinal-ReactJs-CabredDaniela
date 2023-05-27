@@ -7,7 +7,7 @@ return (
         <li style={{ marginLeft: "15%" }}>
         <img src={Logo} alt="logo-sector-animal" style={{ width: "200px"}} />
         </li>
-        <li><a href="#" style={{ marginRight: "30px", textDecoration: "none", marginLeft: "120px", color: "rgba(255, 165, 0, 1)",fontWeight: "bold" }}>Inicio</a></li>
+        <li><a href="#" style={{ marginRight: "30px", textDecoration: "none", marginLeft: "120px", color: "rgba(255, 165, 0, 1)",fontWeight: "bold",}}>Inicio</a></li>
         
         <li><a href="#" style={{ color: "black", textDecoration: "none", marginRight: "40px", fontWeight: "bold" }}
         onMouseOver={(e) => e.target.style.color = "rgba(255, 165, 0, 1)"} 

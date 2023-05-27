@@ -3,8 +3,9 @@ import Header from './Components/Header';
 import Carousel from './Components/Carousel';
 import ItemListContainer from './Components/ItemListContainer';
 import ItemList from './Components/ItemList';
-import ItemCount from './Components/ItemCount';
+import ItemDetailContainer from './Components/ItemDetailContainer';
 import Footer from './Components/Footer';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 
 function App() {
@@ -12,8 +13,13 @@ function App() {
     <div className= "container-fluid">
       <Header/>
       <Carousel/>
-      <ItemListContainer greeting ={<ItemList/>}/>
-      <ItemCount initial={1} stock={50} agregarAlCarrito={(cantidad) => console.log('cantidad agregada ' , cantidad)}/>
+      <BrowserRouter>
+      <Routes>
+        <Route path = {'/'} element = {<ItemListContainer/>}/>
+        <Route path = {'/Item/:itemId'} element = {<ItemDetailContainer/>}/>
+        <Route path = '*'element ={<h1>ERROR 404 NOT FOUND</h1>}/>
+      </Routes>
+      </BrowserRouter>
       <Footer/>
     </div>
   );
