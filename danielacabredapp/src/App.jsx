@@ -10,16 +10,18 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <div className= "container-fluid">
+      <BrowserRouter>  
       <Header/>
       <Carousel/>
-      <BrowserRouter>
       <Routes>
         <Route path = {'/'} element = {<ItemListContainer/>}/>
+        <Route path ={'/category/:id'} element = {<ItemListContainer/>}/>
         <Route path = {'/Item/:itemId'} element = {<ItemDetailContainer/>}/>
-        <Route path = '*'element ={<h1>ERROR 404 NOT FOUND</h1>}/>
+        <Route path = '*'element ={<h1 className='text-center my-5'><strong>ERROR 404 NOT FOUND</strong> </h1>}/>
       </Routes>
-      </BrowserRouter>
+      
       <Footer/>
+      </BrowserRouter>
     </div>
   );
 }

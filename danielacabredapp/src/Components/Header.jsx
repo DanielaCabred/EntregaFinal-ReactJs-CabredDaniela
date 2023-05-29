@@ -1,6 +1,7 @@
 import Lupa from './images/search.svg'
 import Cartwidget from './Cartwidget'
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -18,10 +19,10 @@ const Header = () => {
                     </form>
                     <div className='col-md-1 text-center'>
                         <Cartwidget />
-                    </div>
-                    <a href="#" style={{ color: "lightgrey", textDecoration: "none", marginLeft: "20px", marginRight: "20%" }}
+                    </div> 
+                    <Link to={"/"}  style={{ color: "lightgrey", textDecoration: "none", marginLeft: "20px", marginRight: "20%" }}
                         onMouseOver={(e) => e.target.style.color = "rgba(255, 165, 0, 1)"}
-                        onMouseOut={(e) => e.target.style.color = "lightgrey"}>Ingresar</a>
+                        onMouseOut={(e) => e.target.style.color = "lightgrey"}>Ingresar</Link>
                 </div>
             </nav>
             <hr size="2px" color="black" />

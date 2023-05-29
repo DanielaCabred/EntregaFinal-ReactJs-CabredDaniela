@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Item = ({id,nombre,imagen,precio,stock}) => {
     return (
-        <div className="container">
-            <div className="card d-flex" style={{ width: "18rem" }}>
+        <div className="container" style={{marginLeft:"60px"}}>
+            <div className="card d-flex" style={{width: "18rem" }}>
                 <img src={imagen} class="card-img-top" alt="..." />
                 <div className="card-body text-center">
 

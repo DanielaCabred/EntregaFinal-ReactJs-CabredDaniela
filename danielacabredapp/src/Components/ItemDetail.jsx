@@ -7,8 +7,8 @@ const ItemDetail = ({ producto }) => {
 const {nombre, imagen, precio,descripcion,stock} = producto 
     return (
         <div className="container">
-            <div className="row my-5"style={{marginLeft: "40%"}}>
-                    <div className="card d-flex" style={{ width: "25rem" }}>
+            <div className="row my-5 mx-5">
+                    <div className="card d-flex" style={{ width: "30rem" }}>
                         <img src={imagen} className="card-img-top img-fluid" alt="foto-producto"/>
                         <div className="card-body text-center">
                             <h5 className="card-title" style={{ color: "#D6932F", fontSize: "14px", fontWeight: "bolder", padding: "10px"}}>{nombre}</h5>
