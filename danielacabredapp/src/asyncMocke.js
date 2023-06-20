@@ -58,7 +58,7 @@ export const catalogo = [
         id: 7, 
         nombre: "SPRAY FRONTLINE 250ml",
         precio: 7466, 
-        imagen:"/imgprod/rascador-queso-trixie.png",
+        imagen:"/imgprod/farmaciafrontline.jpeg",
         stock: 126,
         categoria: "Farmacia",
         descripcion:"El SPRAY FRONTLINE está indicado para el control y prevención de infestaciones por pulgas, piojos y garrapatas de los caninos y felinos, desde los 2 días de vida. Para los caninos el producto es activo y de acción persistente contra las pulgas y piojos durante 3 meses y contra las garrapatas durante 5 semanas según la infestación parasitaria ambiental. En los felinos, la protección dura hasta 6 semanas.Producto muy seguro para el animal, para el dueño y para el medio ambiente porque el mecanismo de acción de la droga es específico para insectos y ácaros. Se puede utilizar en hembras en gestación y en lactancia, y aplicar a cachorros desde los 2 días de vida. El beneficio y valor fundamental de este producto es su alta seguridad."
@@ -74,12 +74,12 @@ export const catalogo = [
     },
     {
         id: 9, 
-        nombre: "CEPILLO TRIXIE",  
-        precio: 3329, 
-        imagen:"/imgprod/cepillo-trixie.png",
+        nombre: "TEA LARVOX AEROSOL AMBIENTAL",  
+        precio: 3370, 
+        imagen:"/imgprod/tea-larvox.png",
         stock: 40,
-        categoria: "Ofertas",
-        descripcion:"Con el CEPILLO TRIXIE PARA TAPICERIA Y TEXTILES podrás limpiar cualquier superficie, como el sofá o la ropa,  con la máxima comodidad y facilidad. Este cepillo quita sin esfuerzo el pelo suelto incrustado en superficies textiles o tapicerías gracias a sus cerdas de forma especial. Además, su diseño ergonómico se adapta perfectamente a tu mano."
+        categoria: "Farmacia",
+        descripcion:"TEA Larvox es un insecticida ambiental en aerosol  que  mata pulgas y garrapatas y que posee acción ovicida, larvicida y adulticida. Una sola fumigación de TEA Larvox actúa durante 120 días.  Corta totalmente el ciclo de la pulga y  actúa contra cepas resistentes. Se aplica en cuchas, alfombras, almohadones, pisos, rincones y zócalos de los ambientes frecuentados por caninos y felinos. Se dejan transcurrir dos horas, luego de ese tiempo se ventila y aspira pisos y alfombras para eliminar pulgas y formas juveniles muertas."
     },
     {
         id: 10, 
@@ -111,11 +111,3 @@ export const catalogo = [
     }
     ];
 
-
-    export const agregarProductoId=(id) =>{
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(catalogo.find(item => item.id === parseInt(id))); 
-        }, 1000);
-    });
-    } 

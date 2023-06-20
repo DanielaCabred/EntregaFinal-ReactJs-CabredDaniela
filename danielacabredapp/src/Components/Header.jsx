@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <div className='container-fluid'>
-            <hr size="2px" color="black"/>
+            <hr size="2px" color="black" />
             <nav className="navbar navbar-whithe ">
                 <div className="container-fluid justify-content-end align-items-center">
                     <form className="d-flex align-items-center">
@@ -19,8 +19,8 @@ const Header = () => {
                     </form>
                     <div className='col-md-1 text-center'>
                         <Cartwidget />
-                    </div> 
-                    <Link to={"/"}  style={{ color: "lightgrey", textDecoration: "none", marginLeft: "20px", marginRight: "20%" }}
+                    </div>
+                    <Link to={"/"} style={{ color: "lightgrey", textDecoration: "none", marginLeft: "20px", marginRight: "20%" }}
                         onMouseOver={(e) => e.target.style.color = "rgba(255, 165, 0, 1)"}
                         onMouseOut={(e) => e.target.style.color = "lightgrey"}>Ingresar</Link>
                 </div>
