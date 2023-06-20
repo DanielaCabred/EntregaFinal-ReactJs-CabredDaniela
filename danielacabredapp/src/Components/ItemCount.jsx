@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const ItemCount=({ stock, initial, })=>{
+const ItemCount=({ stock, initial, agregarAlCarrito })=>{
     const [cantidad, setCantidad] = useState(initial)
     const [itemStock, setItemStock] = useState(stock);
     const [vendido, setVendido] = useState(false);
@@ -17,7 +17,7 @@ const ItemCount=({ stock, initial, })=>{
             setCantidad(cantidad - 1)
         }
     }
-    const agregarAlCarrito = (cantidad) => {
+    const agregarCarrito = (cantidad) => {
         if (cantidad <= itemStock) {
             setCantidad(1);
             setItemStock(itemStock - cantidad);
@@ -40,8 +40,8 @@ const ItemCount=({ stock, initial, })=>{
             </div>
             
             <div className="row">
-                <div className="col-md-6 text-center">
-                    {vendido ? <Link to={"/cart"} className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none" }}>Terminar Mi Compra</Link> :  <button className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none" }} onClick={() => agregarAlCarrito(cantidad)} disabled={!stock}>COMPRAR</button>}
+                <div className="col-md-6 text-center mx-5">
+                    {vendido ? <Link to={"/cart"} className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none", marginBottom: "5%"}}>Terminar Compra</Link> :  <button className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none", marginLeft:"65%" }} onClick={() => agregarCarrito(cantidad)} disabled={!stock}>COMPRAR</button>}
                 </div>
             </div>
         </div>

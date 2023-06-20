@@ -34,7 +34,7 @@ const ItemDetail = ({ producto }) => {
                         <p className="card-text">{descripcion}</p>
                         <p className="card-text" style={{ fontWeight: "bolder", fontSize: "25px" }}>${precio}</p>
                         <div>
-                            {cantidadAgregada > 0 ? (<Link to="./Cart" className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "14px", fontWeight: "bolder", border: "none" }}>Terminar Compra</Link>) :
+                            {cantidadAgregada > 0 ? (<Link to="./cart" className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "14px", fontWeight: "bolder", border: "none" }}>Terminar Compra</Link>) :
                                 (
                                     <ItemCount initial={1} stock={stock} agregarAlCarrito={agregarAlCarrito} />
                                 )

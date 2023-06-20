@@ -18,9 +18,9 @@ function App() {
       <Carousel/>
       <Routes>
         <Route path = {'/'} element = {<ItemListContainer/>}/>
-        <Route path ={'/category/:id'} element = {<ItemListContainer/>}/>
-        <Route path = {'/Item/:itemId'} element = {<ItemDetailContainer/>}/>
-        <Route parth = {'/Cart'} element = {<Cart/>}/>
+        <Route path = {'/category/:id'} element = {<ItemListContainer/>}/>
+        <Route path = {'/cart'} element = {<Cart/>}/>
+        <Route path = {'/item/:id'} element = {<ItemDetailContainer/>}/>
         <Route path = '*'element ={<h1 className='text-center my-5'><strong>ERROR 404 NOT FOUND</strong> </h1>}/>
       </Routes>
       <Footer/>
