@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Alert from "./images/alert.png"
 import Tacho from "./images/tacho.png"
 
+
 const Cart = () => {
     const {carrito,eliminarProductoCarrito,vaciarCarrito, totalCantidadProductos,totalCompra} = useContext(CartContext)
     
@@ -43,7 +44,7 @@ const Cart = () => {
                                     <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
                                     <td className="align-middle">{item.nombre}</td>
                                     <td className="align-middle text-end">{item.cantidad}</td>
-                                    <td className="align-middle text-end">$: {item.cantidad * item.precio}</td>
+                                    <td className="align-middle text-end">$: {item.precio}</td>
                                     <td className="align-middle text-end"><Link onClick={() => {eliminarProductoCarrito(item.id)}} title={"Eliminar Producto"}><img src={Tacho} alt={"Eliminar Producto"} width={32} /></Link></td>
                                 </tr>
                                 ))
@@ -52,7 +53,7 @@ const Cart = () => {
                                 <td colSpan={2}>&nbsp;</td>
                                 <td className="text-end"><b>Total a Pagar</b></td>
                                 <td className="text-end"><b> $: {totalCompra()}</b></td>
-                                <td className="text-end"><Link to={"/Checkout"} className="btn btn-warning">Finalizar Compra</Link></td>
+                                <td className="text-end"><Link to={"/checkout"} className="btn btn-warning">Finalizar Compra</Link></td>
                             </tr>
                         </tbody>
                     </table>    

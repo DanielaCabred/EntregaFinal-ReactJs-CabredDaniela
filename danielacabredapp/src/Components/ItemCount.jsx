@@ -41,7 +41,7 @@ const ItemCount=({ stock, initial, agregarAlCarrito })=>{
             
             <div className="row">
                 <div className="col-md-6 text-center mx-5">
-                    {vendido ? <Link to={"/cart"} className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none", marginBottom: "5%"}}>Terminar Compra</Link> :  <button className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none", marginLeft:"65%" }} onClick={() => agregarCarrito(cantidad)} disabled={!stock}>COMPRAR</button>}
+                    {vendido ? <Link to={"/cart"} className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none", marginBottom: "5%"}}>Finalizar Compra</Link> :  <button className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "12px", fontWeight: "bolder", border: "none", marginLeft:"65%" }} onClick={() => agregarCarrito(cantidad)} disabled={!stock}>COMPRAR</button>}
                 </div>
             </div>
         </div>
