@@ -8,13 +8,13 @@ import Tacho from "./images/tacho.png"
 const Cart = () => {
     const {carrito,eliminarProductoCarrito,vaciarCarrito, totalCantidadProductos,totalCompra} = useContext(CartContext)
     
-    if (totalCantidadProductos()===0) {
+    if (totalCantidadProductos() === 0) {
         return (
-            <div className="container">
-                <div className="row my-5">
-                    <div className="col-md-12 text-center">
-                        <div className="alert alert-danger" role="alert">Tu carrito está vacio!<img src={Alert} alt="alerta" widht ="15"/></div>
-                        <Link to={"/"} className="btn btn-warning">Volver a la Página Principal</Link>
+            <div className = "container">
+                <div className = "row my-5">
+                    <div className = "col-md-12 text-center">
+                        <div className = "alert alert-danger" role="alert">Tu carrito está vacio!<img src={Alert} alt="alerta" widht="15"/></div>
+                        <Link to = {"/"} className = "btn btn-warning">Volver a la Página Principal</Link>
                     </div>
                 </div>
             </div>
@@ -22,10 +22,10 @@ const Cart = () => {
     }
     
     return (
-        <div className="container">
-            <div className="row my-5">
-                <div className="col-md-12">
-                    <table className="table">
+        <div className ="container">
+            <div className ="row my-5">
+                <div className ="col-md-12">
+                    <table className ="table">
                         <thead>
                             <tr>
                                 <th scope="col" colSpan={5} className="text-end"><Link onClick={vaciarCarrito} className="btn btn-warning" title={"Vaciar Carrito"}>Vaciar Carrito</Link></th>

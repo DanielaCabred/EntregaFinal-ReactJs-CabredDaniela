@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Cart from './Components/Cart';
 import { CartProvider } from './Context/CartContext';
 import Checkout from './Components/Checkout';
+import ThankYou from './Components/ThankYou';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path = {'/cart'} element = {<Cart/>}/>
         <Route path = {'/item/:id'} element = {<ItemDetailContainer/>}/>
         <Route path={'/checkout'} element = {<Checkout/>}/>
+        <Route path={'/thankyou/:id'} element = {<ThankYou/>}/>
         <Route path = '*'element ={<h1 className='text-center my-5'><strong>ERROR 404 NOT FOUND</strong> </h1>}/>
       </Routes>
       <Footer/>

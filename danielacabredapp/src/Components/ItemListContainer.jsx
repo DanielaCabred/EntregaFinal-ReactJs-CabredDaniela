@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom";
 import { collection, getFirestore, getDocs, query, where } from "firebase/firestore";
-/* import { addDoc } from "firebase/firestore"; */
-/* import {catalogo} from "../asyncMocke.js"  */
 
 
 
@@ -12,16 +10,6 @@ const ItemListContainer = () => {
 const [productos, setProductos] = useState([]) 
 const { id } = useParams();  
 
-
-    /*useEffect(() => {
-        const db = getFirestore();
-        const productosCollection = collection(db, "petshop-sectoranimal");); 
-        
-        catalogo.forEach(item=>{
-            addDoc(productosCollection, item)
-        })
-    },[]);    
-        */
 
     useEffect(() => {
             const db = getFirestore();
@@ -37,7 +25,7 @@ const { id } = useParams();
     },[id]);
     return (
         <div>
-            <h1 className="text-center my-5" style={{ fontWeight: "bolder", fontSize: "35px" }}>Productos destacados</h1>
+            <h1 className="text-center my-5" style={{ fontWeight: "bolder", fontSize: "35px" }}>PRODUCTOS DESTACADOS</h1>
             <ItemList productos={productos} />
         </div>
     )
