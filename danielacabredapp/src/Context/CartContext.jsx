@@ -1,35 +1,37 @@
 import { createContext, useState } from "react";
 
-export const CartContext=createContext({
-    carrito:[]
-}) 
+export const CartContext = createContext({
+        carrito:[]
+    }) 
 
-export const CartProvider=({children})=>{
+export const CartProvider = ({children}) => {
 
-    const [carrito, setCarrito]= useState([])
+    const [carrito, setCarrito] = useState([])
 
     console.log(carrito);
 
-
-    const agregarProductoCarrito=(item, cantidad)=>{
-        if(!estaEnElCarrito(item.id)){
-            setCarrito(prev =>[...prev,{...item,cantidad}])
-        }else{
-            console.error("El producto fue agregado");
+    const agregarProductoCarrito = (item, cantidad) => {
+        if (estaEnElCarrito(item.id)) {
+            let pos = carrito.findIndex(producto => producto.id === item.id)
+            carrito[pos].cantidad += cantidad
+            setCarrito([...carrito]);
+        } else {
+            setCarrito([...carrito, {...item, cantidad:cantidad}]);
+                
         }
     }
 
     const eliminarProductoCarrito=(id)=>{
-        const renderCarrito=carrito.filter(item=>item.id !==id)
-        setCarrito(renderCarrito)
+        const items = carrito.filter(item=>item.id !== id)
+        setCarrito([...items])
     }
 
-    const vaciarCarrito=()=>{
+    const vaciarCarrito = () => {
         setCarrito([])
     }
 
     const estaEnElCarrito=(id)=>{
-        return carrito.some(item=>item.id===id)
+        return carrito.some(item =>item.id === id)
     }
 
     const totalCantidadProductos = () => {
@@ -46,7 +48,7 @@ export const CartProvider=({children})=>{
         return totalAPagar;
     }
 
-    return(
+return (
         <CartContext.Provider value={{carrito, agregarProductoCarrito,eliminarProductoCarrito,vaciarCarrito,totalCantidadProductos,totalCompra}}>
             {children}
         </CartContext.Provider>

@@ -14,8 +14,8 @@ import ThankYou from './Components/ThankYou';
 function App() {
   return (
     <div className= "container-fluid">
-      <BrowserRouter> 
       <CartProvider>
+      <BrowserRouter> 
       <Header/>
       <Carousel/>
       <Routes>
@@ -28,8 +28,8 @@ function App() {
         <Route path = '*'element ={<h1 className='text-center my-5'><strong>ERROR 404 NOT FOUND</strong> </h1>}/>
       </Routes>
       <Footer/>
-      </CartProvider>
       </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

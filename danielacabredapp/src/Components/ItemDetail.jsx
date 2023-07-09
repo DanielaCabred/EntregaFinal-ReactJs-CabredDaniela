@@ -1,28 +1,24 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import ItemCount from './ItemCount'
 import { Link } from "react-router-dom";
 import { CartContext } from '../Context/CartContext';
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({producto}) => {
+    const {agregarProductoCarrito} = useContext(CartContext)
+    const [cantidadAgregada, setCantidadAgregada] = useState({})
+    const {nombre, imagen, precio, descripcion, stock } = producto
+    
+    const agregarAlCarrito =(cantidad) =>{
+        agregarProductoCarrito(cantidadAgregada,cantidad)
+    }
 
-    const { id, nombre, imagen, precio, descripcion, stock } = producto
-
-    const [cantidadAgregada, setCantidadAgregada] = useState(0)
-    const {agregarProductoCarrito}=useContext(CartContext)
-
+    useEffect(()=>{
+        setCantidadAgregada(producto)
+    }, [producto]);
+    
     if (!producto) {
         return <div>Cargando...</div>
     }
-
-    const agregarAlCarrito=(cantidad)=>{
-        setCantidadAgregada(cantidad)
-        
-        const producto ={
-            id,nombre,precio,imagen
-        }
-
-        agregarProductoCarrito(producto,cantidad)
-    }   
 
     return (
         <div className="container">
@@ -36,7 +32,7 @@ const ItemDetail = ({ producto }) => {
                         <div>
                             {cantidadAgregada > 0 ? (<Link to="/cart" className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "14px", fontWeight: "bolder", border: "none" }}>TERMINAR COMPRA</Link>) :
                                 (
-                                    <ItemCount initial={1} stock={stock} agregarAlCarrito={agregarAlCarrito} />
+                                    <ItemCount stock={stock} agregarAlCarrito ={agregarAlCarrito}/>
                                 )
                             }
                             <div><Link to="/" className="btn btn-secondary btn-lg" style={{ backgroundColor: "#30AABA", color: "white", fontSize: "14px", fontWeight: "bolder", border: "none", marginTop: "5%" }}>SEGUIR COMPRANDO</Link></div>

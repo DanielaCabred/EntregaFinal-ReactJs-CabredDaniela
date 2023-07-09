@@ -19,7 +19,7 @@ const { id } = useParams();
                 if (resultado.size>0){
                 setProductos(resultado.docs.map(item=>({id:item.id, ...item.data()})))
                 } else{
-                    console.error("¡No hay productos en su coleccion!");
+                    console.error("¡No hay productos en su colección!");
                 }
             });
     },[id]);
